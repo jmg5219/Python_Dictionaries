@@ -11,6 +11,8 @@ if "Dessert" in meal:
     print('Of Course I will have Dessert')
     meal["Dessert"]="ice-cream"
     print(meal)
+    del meal["Dessert"]
+    print(meal)
 else:
     print('Need to find some dessert')
     # meal['Dessert'] = "Churros"
