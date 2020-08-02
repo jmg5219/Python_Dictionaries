@@ -49,6 +49,7 @@ def total_price(price):
     for i in range(0,len(price)):
         total_price = total_price + price[i]
     return total_price
+
 #Function to prompt user which input case should be used
 def table_selector():
     # This is the input order
@@ -87,7 +88,7 @@ menu["Brunch"]["Steak Salad"] = 15.99
 menu["Specials"] = {"Soup of the Day":8.99,"Catch of the Day":14.99,"Chef Special":15.99}
 #Change "Three Egg Breakfast" to have the options of: Without Bacon (8.99) and With Bacon (9.99)
 menu["Brunch"]["Three Egg Breakfast"] = {"Without Bacon":8.99, "With Bacon":9.99}
-print(menu)
+
 
 #Initializing empty lists for lookup
 brunch = []
@@ -109,7 +110,7 @@ for i in special:
     print('{:<20s}{:>15s}{:>5s}'.format(i,"$ ",str(menu["Specials"][i])))#Printing Special items
     price.append(menu["Specials"][i])#Appending Special items to the price list
 for i in drink:
-    print('{:<20s}{:>15s}{:>5s}'.format(i,"$ ",str(menu["Drinks"][i])))#Printing Drinks
+    print('{:<20s}{:>15s}{:>5s}'.format(i,"$ ",str("{:.2f}".format(menu["Drinks"][i]))))#Printing Drinks
     price.append(menu["Drinks"][i])#Appending drink items to the price list
 print()
 #Calculation and storing of price, tax and total price
@@ -130,4 +131,6 @@ print("** Suggested Tip **")
 print('{:<12s}{:>1s}{:>1s}'.format("Tip 25%:","$ ",total25))
 print('{:<12s}{:>1s}{:>1s}'.format("Tip 20%:","$ ",total20))
 print('{:<12s}{:>1s}{:>1s}'.format("Tip 15%:","$ ",total15))
+
+
 
